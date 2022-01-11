@@ -14,6 +14,9 @@ setup(
     author_email = 'swethasaseendran4@gmail.com',
     url = 'https://github.com/swetha4444/PyTrackX',
     license='MIT',
+    project_urls={
+        "Bug Tracker": "https://github.com/swetha4444/PyTrackX/issues",
+    },
     install_requires=['numpy>=1.11',
                         'matplotlib>=1.5',
                         'pandas',
@@ -23,5 +26,9 @@ setup(
                         'time'],
     download_url= 'https://github.com/swetha4444/PyTrackX/archive/refs/tags/0.1.tar.gz',
     keywords = ['yolo', 'mediapipe','object detection','object tracking'],
-    classifiers = [],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
