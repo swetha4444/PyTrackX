@@ -13,7 +13,6 @@ import time
 import cv2
 
 # YOLO Object tracking (yolo-folder-path,video,object): string,string,string
-
 def track_object(yolo_path,video_path,object):
     #Labels defined
     centroids_result = []
