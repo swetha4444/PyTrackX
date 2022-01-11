@@ -5,7 +5,7 @@ setup(
     packages = ['my_python_package'],
     version = '0.1',  # Ideally should be same as your GitHub release tag varsion
     description = 'A general python framework for visual object tracking.',
-    author = 'Sriram Kannan',
+    author = 'Sriram Kannan, Swetha Saseendran',
     author_email = 'swethasaseendran4@gmail.com',
     url = 'https://github.com/swetha4444/PyTrackX',
     license='MIT',
