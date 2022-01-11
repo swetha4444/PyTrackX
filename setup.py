@@ -1,10 +1,15 @@
 from distutils.core import setup
-
+import setuptools
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+    
 setup(
     name = 'PytrackX',
     packages = ['PytrackX'],
     version = '0.1',  # Ideally should be same as your GitHub release tag varsion
     description = 'A general python framework for visual object tracking.',
+    long_description= long_description,
+    long_description_content_type="text/markdown",
     author = 'Sriram Kannan, Swetha Saseendran',
     author_email = 'swethasaseendran4@gmail.com',
     url = 'https://github.com/swetha4444/PyTrackX',
