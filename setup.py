@@ -24,7 +24,7 @@ setup(
                         'scipy>=1',
                         'mediapipe>=1',
                         ],
-    download_url= 'https://github.com/swetha4444/PyTrackX/archive/refs/tags/0.3.tar.gz',
+    download_url= 'https://github.com/swetha4444/PyTrackX/archive/refs/tags/0.4.tar.gz',
     keywords = ['yolo', 'mediapipe','object detection','object tracking'],
     classifiers=[
         "Programming Language :: Python :: 3",
