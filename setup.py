@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name = 'PytrackX',
     packages = ['PytrackX'],
-    version = '0.2',  # Ideally should be same as your GitHub release tag varsion
+    version = '0.3',  # Ideally should be same as your GitHub release tag varsion
     description = 'A general python framework for visual object tracking.',
     long_description= long_description,
     long_description_content_type="text/markdown",
