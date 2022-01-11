@@ -3,3 +3,4 @@ yolo-coco/
 test.py
 input.mp4
 __pycache__/
+person_coords.txt

@@ -4,7 +4,7 @@ from .config import camera_no
 import matplotlib.pyplot as plt
 import pandas as pd
 from .config import MIN_CONF,confidence_threshold
-from track import *
+from .track import *
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
@@ -17,7 +17,7 @@ import cv2
 def track_object(yolo_path,video_path,object):
     #Labels defined
     centroids_result = []
-    labelsPath = yolo_path+"coco.names"
+    labelsPath = yolo_path+"/coco.names"
     LABELS = open(labelsPath).read().strip().split("\n")
 
     #Colours defined
@@ -27,8 +27,8 @@ def track_object(yolo_path,video_path,object):
                             dtype="uint8")
 
     #YOLO algo imported
-    weightsPath = yolo_path+"yolov3.weights"
-    configPath = yolo_path+"yolov3.cfg"
+    weightsPath = yolo_path+"/yolov3.weights"
+    configPath = yolo_path+"/yolov3.cfg"
     net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 
     tracker = EuclideanDistTracker()
@@ -81,8 +81,9 @@ def track_object(yolo_path,video_path,object):
     cap.release()
     cv2.destroyAllWindows()
     
-    f = open(object+"coords.txt", "a")
-    f.write(centroids_result)
-    f.write("WIDTH: "+f_width)
-    f.write("HEIGHT: "+f_height)
+    f = open(object+"_coords.txt", "a")
+    for center in centroids_result:
+        f.write(str(center)+"\n")
+    f.write("WIDTH: "+str(f_width))
+    f.write("\nHEIGHT: "+str(f_height))
     f.close()
