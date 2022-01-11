@@ -9,10 +9,8 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 import numpy as np
-import imutils
 import time
 import cv2
-import math
 
 # YOLO Object tracking (yolo-folder-path,video,object): string,string,string
 
