@@ -5,3 +5,4 @@ __pycache__/
 person_coords.txt
 posture_coords.txt
 test.py
+dist/
