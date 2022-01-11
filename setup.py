@@ -11,7 +11,12 @@ setup(
     license='MIT',
     packages=['module'],
     install_requires=['numpy>=1.11',
-                        'matplotlib>=1.5'],
+                        'matplotlib>=1.5',
+                        'pandas',
+                        'cv2',
+                        'scipy',
+                        'mediapipe',
+                        'time'],
     keywords = ['yolo', 'mediapipe','object detection','object tracking'],
     classifiers = [],
 )
