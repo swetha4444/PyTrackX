@@ -12,6 +12,8 @@ PyTrackX is a  Python package that serves as an automated tool which tracks diff
 ```
 
 Returns a text file with coordinates of each object detected per frame as tracked frame to frame.
+![image](https://user-images.githubusercontent.com/68152189/148946767-65116ab0-70dd-457e-bfb0-bbb1d20aeb01.png)
+
 
 ### **track_posture(width,height,video_path,min_dconf,min_tconf)**
 ```
@@ -23,6 +25,8 @@ Returns a text file with coordinates of each object detected per frame as tracke
 ```
 
 Returns a text file with corrdinates of all landmarks detected by <a href="https://mediapipe.dev/"> Mediapipe </a> per frame as tracked frame to frame with respect to the frame width and height.<br>
+![image](https://user-images.githubusercontent.com/68152189/148946827-6f51a4e1-69d2-47c2-8b54-3e81b63f3a85.png)
+
 <img src="https://user-images.githubusercontent.com/68152189/148942731-301e8b0e-99d0-40b2-9e44-1f1ca33d5a95.png" width="500" height="400" />                                                                                                                                      
 
 ## User Installation
