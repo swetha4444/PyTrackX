@@ -58,13 +58,12 @@ python setup.py install
 
 ### Dependencies:
 ```
-* 'numpy>=1.11'
-* 'matplotlib>=1.5'
-* 'pandas'
-* cv2'
-* 'scipy'
-* 'mediapipe'
-* 'time'
+* numpy>=1.11
+* matplotlib>=1.5
+* pandas
+* opencv-python
+* scipy
+* mediapipe
 ```
 
 ## Usage
