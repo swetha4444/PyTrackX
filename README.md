@@ -1,4 +1,4 @@
-<h1 align="center">PyTrackX</h1>
+<h1 align="center">PytrackX</h1>
 A general python framework for visual object tracking.
 PyTrackX is a  Python package that serves as an automated tool which tracks different objects and body movements as per user requirement and returns the real-time coordinates with very less steps and a simple video input.
 
@@ -32,7 +32,7 @@ Returns a text file with corrdinates of all landmarks detected by <a href="https
 ## User Installation
 ### Install Package
 ```
-pip install PyTrackX
+pip install PytrackX==0.7
 ```
 Download yolo-coco folder from <a href="https://drive.google.com/drive/folders/1PGgWb-8yNSJNiHQF_Av6EHqBSEdiRhFp?usp=sharing">here</a> into your **current working directory**. Rename the folder **yolo-coco** if otherwise. The folder contains the following files:
 ```
