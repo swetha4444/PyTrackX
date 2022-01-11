@@ -10,7 +10,7 @@ import time
 import cv2
 import mediapipe as mp
 
-# YOLO Object tracking (yolo-folder-path,video,object): string,string,string
+# YOLO Object tracking (yolo-folder-path,video,object,min_conf): string,string,string,float
 def track_object(yolo_path,video_path,object,min_conf=MIN_CONF):
     #Labels defined
     centroids_result = []
