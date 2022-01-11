@@ -15,7 +15,7 @@ import mediapipe as mp
 from tkinter import *
 
 # YOLO Object tracking (yolo-folder-path,video,object): string,string,string
-def track_object(yolo_path,video_path,object):
+def track_object(yolo_path,video_path,object,min_conf=MIN_CONF):
     #Labels defined
     centroids_result = []
     labelsPath = yolo_path+"/coco.names"
@@ -58,7 +58,7 @@ def track_object(yolo_path,video_path,object):
                                     swapRB=True,
                                     crop=False)
 
-        results,boxes,idxs,dets,centroids = detect_boundary(frame, net, ln, MIN_CONF, personIdx=LABELS.index(object))
+        results,boxes,idxs,dets,centroids = detect_boundary(frame, net, ln, min_conf, personIdx=LABELS.index(object))
         boxes_ids,center = tracker.update(boxes)
         centroids_result.append(center)
         
@@ -72,7 +72,7 @@ def track_object(yolo_path,video_path,object):
         for box_id in boxes_ids:
             x, y, w, h, id = box_id
             cv2.rectangle(frame, (x, y), (x + w, y + h), color, 1)
-            text = "Player "
+            text = object+" "
             cv2.putText(frame, text+str(id), (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
         
         cv2.imshow("Image",frame)
@@ -89,14 +89,16 @@ def track_object(yolo_path,video_path,object):
     f.write("\nHEIGHT: "+str(f_height))
     f.close()
 
-def track_posture():
+
+# Mediapipe Posture tracking (width,height,video_path,min_dconf,min_tconf): int,int,string/int(0),float,float
+# video_path (0-live webcam capture, path[string]-video input feed path)
+
+def track_posture(WIDTH=600,HEIGHT=600,video_path=0,min_dconf=0.5,min_tconf=0.5):
     mp_drawing = mp.solutions.drawing_utils
     mp_pose = mp.solutions.pose
-    WIDTH = 600
-    HEIGHT = 600
-
-    capture = cv2.VideoCapture(0)
-    with mp_pose.Pose(min_detection_confidence=0.5,min_tracking_confidence=0.5) as pose :
+    f = open("posture_coords.txt", "a")
+    capture = cv2.VideoCapture(video_path)
+    with mp_pose.Pose(min_detection_confidence=min_dconf,min_tracking_confidence=min_tconf) as pose :
         while(capture.isOpened()) :
             ret , frame = capture.read()
 
@@ -108,6 +110,7 @@ def track_posture():
             try :
                 landmarks = result.pose_landmarks.landmark
                 coordinates = {"Nose" : [WIDTH *landmarks[0].x,HEIGHT*landmarks[0].y] , "Left-Shoulder" : [WIDTH *landmarks[11].x,HEIGHT*landmarks[11].y] , "Right-Shoulder" : [WIDTH *landmarks[12].x,HEIGHT*landmarks[12].y] , "Left-Elbow" : [WIDTH *landmarks[13].x,HEIGHT*landmarks[13].y] , "Right-Elbow" : [WIDTH *landmarks[14].x,HEIGHT*landmarks[14].y] , "Left-Wrist" : [WIDTH *landmarks[15].x,HEIGHT*landmarks[15].y] , "Right-Wrist" : [WIDTH *landmarks[16].x,HEIGHT*landmarks[16].y], "Left-Hip" : [WIDTH *landmarks[23].x,HEIGHT*landmarks[23].y], "Right-Hip" : [WIDTH *landmarks[24].x,HEIGHT*landmarks[24].y], "Left-Knee" : [WIDTH *landmarks[25].x,HEIGHT*landmarks[25].y], "Right-Knee" : [WIDTH *landmarks[26].x,HEIGHT*landmarks[26].y], "Left-Ankle" : [WIDTH *landmarks[27].x,HEIGHT*landmarks[27].y], "Right-Ankle" : [WIDTH *landmarks[28].x,HEIGHT*landmarks[28].y] , "Left-Sword" : [0,0] , "Right-Sword" : [0,0]}
+                f.write(str(coordinates)+"\n")
             except :
                 pass
 
@@ -123,7 +126,4 @@ def track_posture():
 
     capture.release()
     cv2.destroyAllWindows()
-
-    f = open("coordinates.txt", "a")
-    f.write(coordinates)
     f.close()
