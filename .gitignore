@@ -4,3 +4,4 @@ input.mp4
 __pycache__/
 person_coords.txt
 posture_coords.txt
+test.py

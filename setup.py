@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name = 'PytrackX',
-    packages = ['my_python_package'],
+    packages = ['PytrackX'],
     version = '0.1',  # Ideally should be same as your GitHub release tag varsion
     description = 'A general python framework for visual object tracking.',
     author = 'Sriram Kannan, Swetha Saseendran',
