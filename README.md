@@ -82,3 +82,7 @@ track_object(yolo_path,video_path,object)
 from PyTrackX import *
 track_posture()
 ```
+
+## Author
+<a href="https://github.com/Marirs27">Sriram Kannan</a>
+<a href="https://github.com/swetha4444">Swetha Saseendran</a>
