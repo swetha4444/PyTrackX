@@ -23,7 +23,7 @@ setup(
                         'cv2>=1',
                         'scipy>=1',
                         'mediapipe>=1',
-                        'time>=1'],
+                        ],
     download_url= 'https://github.com/swetha4444/PyTrackX/archive/refs/tags/0.3.tar.gz',
     keywords = ['yolo', 'mediapipe','object detection','object tracking'],
     classifiers=[
