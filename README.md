@@ -37,6 +37,21 @@ Download yolo-coco folder from <a href="https://drive.google.com/drive/folders/1
 * yolo3.weights
 ```
 
+Another option  is to download via git:
+### Git Install
+
+```
+    pip install git+https://github.com/swetha4444/PyTrackX.git
+```
+
+You can also clone the repository:
+### Clone Repository
+```
+    git clone https://github.com/swetha4444/PyTrackX.git
+    pip install -r requirements.txt
+    python setup.py install
+```
+
 ### Dependencies:
 ```
 * 'numpy>=1.11'
