@@ -1,4 +1,5 @@
 .pypirc
 yolo-coco/
-my_python_package/test.py
-my_python_package/input.mp4
+test.py
+input.mp4
+__pycache__/

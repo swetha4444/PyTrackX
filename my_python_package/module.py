@@ -1,9 +1,9 @@
-from detection import detect_boundary
+from .detection import detect_boundary
 from scipy.spatial import distance as dist
-from config import camera_no
+from .config import camera_no
 import matplotlib.pyplot as plt
 import pandas as pd
-from config import MIN_CONF,confidence_threshold
+from .config import MIN_CONF,confidence_threshold
 from track import *
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
