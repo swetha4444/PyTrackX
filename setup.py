@@ -9,7 +9,6 @@ setup(
     author_email = 'swethasaseendran4@gmail.com',
     url = 'https://github.com/swetha4444/PyTrackX',
     license='MIT',
-    packages=['module'],
     install_requires=['numpy>=1.11',
                         'matplotlib>=1.5',
                         'pandas',
