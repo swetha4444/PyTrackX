@@ -84,5 +84,5 @@ track_posture()
 ```
 
 ## Author
-<a href="https://github.com/Marirs27">Sriram Kannan</a> <br>
-<a href="https://github.com/swetha4444">Swetha Saseendran</a>
+<a href="https://github.com/Marirs27">**Sriram Kannan**</a> <br>
+<a href="https://github.com/swetha4444">**Swetha Saseendran**</a>
