@@ -1,4 +1,4 @@
-<h1 align="center">PytrackX</h1>
+<p align="center"><img align="center" src="https://user-images.githubusercontent.com/68152189/152375199-02a9fc7a-01bf-4052-bb34-23ba9a9be35a.png"></img></p><br>
 A general python framework for visual object tracking.
 PyTrackX is a  Python package that serves as an automated tool which tracks different objects and body movements as per user requirement and returns the real-time coordinates with very less steps and a simple video input.
 
